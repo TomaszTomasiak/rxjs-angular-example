@@ -14,7 +14,7 @@ export class DataService {
   }
 
   addPerson(person: Person) {
-    this.dataBaseService.fetchPersons().subscribe(this.observer());
+    this.dataBaseService.addPerson(person).subscribe(this.observer());
   }
 
   private init(): void {
@@ -28,7 +28,7 @@ export class DataService {
         this.subject.next(persons);
       },
       error: error => console.error(error),
-      complete: () => console.log('Complete'),
+      complete: () => console.log('Complete!'),
     };
   }
 }
